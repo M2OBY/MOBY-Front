@@ -1,26 +1,59 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React,{Component} from 'react'
+import Home from '../src/Component/Home/home'
+//import View from '../pages/view'
+import {Router,Route, Switch} from 'react-router-dom'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload Reconaissance Vocale.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+//import {history} from "../history";
+import TopBar from '../src/Component/Home/top-bar'
+import LoginForm from '../src/Component/Home/login'
+import Header from '../src/Component/Home/header'
+class App extends Component{
+
+
+    constructor(props){
+        super(props);
+
+        this.state = {
+
+            showLoginForm: false
+
+        }
+    }
+
+    render(){
+
+        const {showLoginForm} = this.state;
+
+        return (
+            <div className={'app-layout'}>
+                <TopBar onShowLoginForm={() => {
+
+                        this.setState({
+                            showLoginForm: true,
+                        });
+
+                }} />
+                {showLoginForm ? <LoginForm onClose={() => {
+                      this.setState({
+                            showLoginForm: false,
+                        });
+
+                }} /> : null}
+
+              <div className={'app-container'}>
+                <Header/>
+                <div className={'app-content'}></div>
+            </div>
+               {/*  { <Router>
+                    <Switch>
+                        <Route exact path={'/'} component={Home}/>
+                    </Switch>
+                </Router> }
+                 */}
+
+            </div>
+        )
+    }
 }
 
 export default App;

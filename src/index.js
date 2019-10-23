@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import App from './App';
+import './CSS/app.css';
 //import login from './components/login/login'
 import * as serviceWorker from './serviceWorker';
 
