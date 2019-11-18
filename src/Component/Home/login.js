@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import classNames from 'classnames'
 import _ from 'lodash'
 import {isEmail} from '../../Helpers/email'
+import API from '../../Utils/API'
 //import {createUser, login} from '../helpers/user'
 
 export default class LoginForm extends Component{
@@ -115,6 +116,7 @@ export default class LoginForm extends Component{
 
 					errors[field] = null;
 
+
 					const isFieldValid = fieldValidate.doValidate();
 
 					if(isFieldValid === false){
@@ -149,6 +151,54 @@ export default class LoginForm extends Component{
 		
 
 	}
+
+	_onSubmit(event){
+
+		const {isLogin,user} = this.state; 
+		event.preventDefault();
+
+
+		let fieldNeedToValidate = ['email', 'password'];
+
+		if(!isLogin){
+
+			fieldNeedToValidate = ['name', 'email', 'password', 'confirmPassword'];
+		}
+
+
+		this._formValidation(fieldNeedToValidate,(isValid) => {
+
+
+				console.log("The form is validated? ", isValid);
+
+
+				if(isValid){
+
+					// send request to backend
+					if(isLogin){
+						// do send data for login endpoint
+
+						API.login(this.state.user.email, this.state.user.password).then(function(data){
+
+						}, function(error){
+
+						});
+					}else{
+
+						API.signup(this.state.user.email, this.state.user.password).then((response) => {
+
+							console.log("Hey i got data after send post", response);
+						});
+					}
+					
+
+				}
+			console.log("le formulaire a été envoyé!!!");
+		});
+
+		
+	}
+		
 	/*_onSubmit(event){
 
 		const {isLogin,user} = this.state; 
