@@ -14,17 +14,17 @@ export default class LoginForm extends Component{
 			message: null,
 			isLogin: true,
 			user: {
-				name : "",
+				username : "",
 				email: "",
 				password: "",
-				confirmPassword: ""
+				confirmationPassword: ""
 			},
 
 			error: {
-				name: null,
+				username: null,
 				email: null,
 				password: null,
-				confirmPassword: null,
+				confirmationPassword: null,
 			}
 		}
 
@@ -39,10 +39,10 @@ export default class LoginForm extends Component{
 
 		const allFields = {
 
-			name: {
-				message: "Your name is required.",
+			username: {
+				message: "Your username is required.",
 				doValidate: () => {
-					const value = _.trim(_.get(user, 'name', ""));
+					const value = _.trim(_.get(user, 'username', ""));
 
 				
 					if(value.length > 0){
@@ -65,6 +65,9 @@ export default class LoginForm extends Component{
 					}
 					return false;
 				}
+
+
+
 			},
 
 			password: {
@@ -85,13 +88,13 @@ export default class LoginForm extends Component{
 				}
 			},
 
-			confirmPassword: {
+			confirmationPassword: {
 				message: "Password does not match.",
 				doValidate: () => {
 
 
 					const passwordValue = _.get(user, 'password');
-					const value = _.get(user, 'confirmPassword', '');
+					const value = _.get(user, 'confirmationPassword', '');
 
 
 					if(passwordValue === value){
@@ -162,7 +165,7 @@ export default class LoginForm extends Component{
 
 		if(!isLogin){
 
-			fieldNeedToValidate = ['name', 'email', 'password', 'confirmPassword'];
+			fieldNeedToValidate = ['username', 'email', 'password', 'confirmationPassword'];
 		}
 
 
@@ -170,7 +173,6 @@ export default class LoginForm extends Component{
 
 
 				console.log("The form is validated? ", isValid);
-
 
 				if(isValid){
 
@@ -228,7 +230,7 @@ export default class LoginForm extends Component{
 
 		if(!isLogin){
 
-			fieldNeedToValidate = ['name', 'email', 'password', 'confirmPassword'];
+			fieldNeedToValidate = ['username', 'email', 'password', 'confirmationPassword'];
 		}
 
 
@@ -333,9 +335,9 @@ export default class LoginForm extends Component{
 									!isLogin ? <div>
 										
 
-										<div className={classNames('app-form-item', {'error': _.get(error, 'name')})}>
-											<label htmlFor="name-id">Name</label>
-											<input value={user.name} onChange={this._onTextFieldChange} placeholder="Your name" id="name-id" type="text" name="name" />
+										<div className={classNames('app-form-item', {'error': _.get(error, 'username')})}>
+											<label htmlFor="username-id">username</label>
+											<input value={user.username} onChange={this._onTextFieldChange} placeholder="Your username" id="username-id" type="text" name="username" />
 										</div>
 									</div>: null
 								}
@@ -351,9 +353,9 @@ export default class LoginForm extends Component{
 								{
 									!isLogin ? <div>
 
-											<div className={classNames('app-form-item', {'error': _.get(error, 'confirmPassword')})}>
+											<div className={classNames('app-form-item', {'error': _.get(error, 'confirmationPassword')})}>
 												<label htmlFor="confirm-password-id">Confirm Password</label>
-												<input value={user.confirmPassword} onChange={this._onTextFieldChange} placeholder="Confirm password" id="confirm-password-id" type="password" name="confirmPassword" />
+												<input value={user.confirmationPassword} onChange={this._onTextFieldChange} placeholder="Confirm password" id="confirm-password-id" type="password" name="confirmationPassword" />
 										</div>
 									</div>: null
 								}
