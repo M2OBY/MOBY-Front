@@ -11,7 +11,7 @@ export default {
 
     login : function(email,password) {
 
-        return axios.post(burl + '/user/login',{
+        return axios.post(burl + '/users/login',{
 
             'email' : email,
 
@@ -27,7 +27,7 @@ export default {
 
     signup : function(send){
 
-        return axios.post(burl + '/user/signup',send,{headers: headers})
+        return axios.post(burl + '/users/register',send,{headers: headers})
 
     },
 

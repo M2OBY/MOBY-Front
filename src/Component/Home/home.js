@@ -3,7 +3,7 @@ import Header from '../Home/header'
 //import HomeForm from "../components/home-form";
 //import HomeUploading from '../components/home-uploading'
 //import HomeUploadSent from '../components/home-upload-sent'
-import _ from 'lodash'
+//import _ from 'lodash'
 
 class Home extends Component {
 

@@ -14,7 +14,7 @@ export default class LoginForm extends Component{
 			message: null,
 			isLogin: true,
 			user: {
-				name: "",
+				name : "",
 				email: "",
 				password: "",
 				confirmPassword: ""
@@ -29,7 +29,7 @@ export default class LoginForm extends Component{
 		}
 
 
-		//this._onSubmit = this._onSubmit.bind(this)
+		this._onSubmit = this._onSubmit.bind(this)
 		this._onTextFieldChange = this._onTextFieldChange.bind(this);
 		this._formValidation = this._formValidation.bind(this)
 	}
@@ -177,15 +177,34 @@ export default class LoginForm extends Component{
 					// send request to backend
 					if(isLogin){
 						// do send data for login endpoint
+						console.log("Fonction de submit")
+						API.login(this.state.user.email, this.state.user.password).then((response) => {
 
-						API.login(this.state.user.email, this.state.user.password).then(function(data){
+							/// login success
 
-						}, function(error){
+							this.setState({
+								message: {
+									type: 'success',
+									message: 'Login successful.'
+								}
+							});
 
-						});
+
+						}).catch((err) => {
+
+
+							// login not suscess.
+							this.setState({
+								message: {
+									type: 'error',
+									message: 'An error login!!!'
+								}
+							});
+							console.log(err);
+						})
 					}else{
 
-						API.signup(this.state.user.email, this.state.user.password).then((response) => {
+						API.signup(this.state.user).then((response) => {
 
 							console.log("Hey i got data after send post", response);
 						});
