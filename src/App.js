@@ -1,59 +1,31 @@
-import React,{Component} from 'react'
-import Home from '../src/Component/Home/home'
-//import View from '../pages/view'
-import {Router,Route, Switch} from 'react-router-dom'
+import React, { Component } from "react";
+import "./App.css";
+import { Switch, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from './components/layouts/Navbar';
+import Footer from './components/layouts/Footer';
+import Notfoundpage from "./components/pages/Notfoundpage";
+import Details from "./components/pages/Details";
+import Home from "./components/pages/Home"
+import Dashboard from "./components/pages/Dashboard"
+import Upload from "./components/pages/Upload"
 
-//import {history} from "../history";
-import TopBar from '../src/Component/Home/top-bar'
-import LoginForm from '../src/Component/Home/login'
-import Header from '../src/Component/Home/header'
-class App extends Component{
-
-
-    constructor(props){
-        super(props);
-
-        this.state = {
-
-            showLoginForm: false
-
-        }
-    }
-
-    render(){
-
-        const {showLoginForm} = this.state;
-
-        return (
-            <div className={'app-layout'}>
-                <TopBar onShowLoginForm={() => {
-
-                        this.setState({
-                            showLoginForm: true,
-                        });
-
-                }} />
-                {showLoginForm ? <LoginForm onClose={() => {
-                      this.setState({
-                            showLoginForm: false,
-                        });
-
-                }} /> : null}
-
-              <div className={'app-container'}>
-                <Header/>
-                <div className={'app-content'}></div>
-            </div>
-               {/*  { <Router>
-                    <Switch>
-                        <Route exact path={'/'} component={Home}/>
-                    </Switch>
-                </Router> }
-                 */}
-
-            </div>
-        )
-    }
+class App extends Component {
+  render() {
+    return (
+      <div >
+       <Navbar/>
+        <Switch>
+          <Route exact path="/" component={Home}/>
+          <Route path="/dashboard" component={Dashboard}/>
+          <Route path="/upload" component={Upload}/>
+          <Route path="/details" component={Details}/>
+          <Route  component={Notfoundpage}/>
+        </Switch>
+       <Footer/>
+      </div>
+    );
+  }
 }
 
 export default App;
