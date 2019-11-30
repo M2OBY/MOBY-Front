@@ -1,6 +1,6 @@
 
 
-### `Présentation du Projet Pilotage vocale d'une application`
+## `Présentation du Projet Pilotage vocale d'une application`
  Cette application a été conçu dans le cadre de la réalisation d’un projet en Développement de Logiciel Libre sous la licence CC BY-NC-SA.
 L’objectif étant, de réaliser une application qui permettra aux utilisateurs de contrôler des documents (Exemple fichier PDF) de leur présentation uniquement grâce à leur voix.<br />
 
@@ -26,7 +26,7 @@ Pour pouvoir visualiser les documents PDF de notre application, nous avons utili
 
 Afin d'assurer le bon fonctionnement de l'application, plusieurs manipulations doivent être réalisées au préalable:
 
-### `Prérequis`
+#### `Prérequis`
 
 Installer ReactJS 
 
