@@ -10,7 +10,7 @@ Notre projet est scindé en 2 parties:
   
 La partie Front est structuré en composants, nous avons suivi la logique de REACT qui consiste à départager les parties d’une application en arborescence de composants afin de mieux répartir les fonctionnalités et les tâches.<br />
 
-Vu que notre application a besoin d'une reconaissance vocale. Nous avons utiliser le module react-speech-recognition, afin de pouvoir transcrire la parole en texte, qui pourra par la suite être transformé en action. Les actions possibles sont :<br />
+Vu que notre application a besoin d'une reconaissance vocale. Nous avons utiliser le module <b> react-speech-recognition </b>, afin de pouvoir transcrire la parole en texte, qui pourra par la suite être transformé en action. Les actions possibles sont :<br />
 -Passer à la page suivante.<br />
 -Passer à la page précédente.<br />
 -Eventuellement, aller à une page en prononçant un mot clé qui se trouve sur cette page.<br />
@@ -20,7 +20,7 @@ Pour pouvoir visualiser les documents PDF de notre application, nous avons utili
 -Zoomer sur un page du document.<br>
 -Faire une rotation d'une page.<br>
 
-Nous avons utilisé axios pour pouvoir faire communiquer notre Front et notre Back. C'est un client HTTP populaire basé sur des promesses qui arbore une API facile à utiliser et peut être utilisé à la fois dans le navigateur et Node.js.
+Nous avons utilisé <b> axios</b> pour pouvoir faire communiquer notre Front et notre Back. C'est un client HTTP populaire basé sur des promesses qui arbore une API facile à utiliser et peut être utilisé à la fois dans le navigateur et Node.js.
 
 
 
