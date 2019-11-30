@@ -34,8 +34,34 @@ https://fr.reactjs.org/
 ```
 Récuperer la partie Backend sur Git:
 ```
+https://github.com/M2OBY/MOBY-back.git
 
 ```
 
+Récuperer la partie Frontend sur Git:
+```
+https://github.com/M2OBY/MOBY-Front.git
 
-POUR LANCER LE PROJET : npm start sur le port 3000 du localhost (http://localhost:3000). 
+```
+Puis ajouter les dépendances entre les differents paquets:
+```
+npm install dependencies
+
+```
+Installer le module de reconnaissance vocale de Google:
+```
+npm install react-speech-recognition
+
+```
+Installer le module d'affichage du PDF
+
+```
+npm install react-pdf-viewer
+
+```
+POUR LANCER LE PROJET  : 
+```
+npm start
+
+```
+Il sera lancé sur le port 3000 du localhost (http://localhost:3000)
