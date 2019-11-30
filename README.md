@@ -14,8 +14,8 @@ Vu que notre application a besoin d'une reconaissance vocale. Nous avons utilise
 -Passer à la page précédente.<br />
 -Eventuellement, aller à une page en prononçant un mot clé qui se trouve sur cette page.<br />
 
-Pour pouvoir visualiser les documents PDF de notre application, nous avons utilisé <b>react pdf-viewer</b>, ce module permet d'interagir avec un document PDF notamment avec des commandes qui aident à:
--Naviguer entre les differentes pages. <br>
+Pour pouvoir visualiser les documents PDF de notre application, nous avons utilisé <b>react pdf-viewer</b>, ce module permet d'interagir avec un document PDF notamment avec des commandes qui aident à:</br>
+-Naviguer entre les differentes pages. </br>
 -Zoomer sur un page du document.<br>
 -Faire une rotation d'une page.<br>
 
