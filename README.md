@@ -26,8 +26,10 @@ Pour pouvoir visualiser les documents PDF de notre application, nous avons utili
 
 Afin d'assurer le bon fonctionnement de l'application, plusieurs manipulations doivent être réalisées au préalable:
 
-###Prérequis
+### `Prérequis`
+
 Installer ReactJS 
+
 ```
 https://fr.reactjs.org/
 
