@@ -14,6 +14,7 @@ import { Verif } from './login/verif.js';
 import { Signup } from './signup/signup.js';
 import { upload } from './upload/upload';
 import {Profil} from './Profil/Profil.js';
+import {Speech} from './ReconnaissanceVocale/speech.js';
 
 
 
@@ -39,6 +40,7 @@ export default class App extends Component {
                     <Route path='/verif' component={Verif} />
                     <Route path='/upload' component={upload} />
                     <Route path='/profil' component={Profil} />
+                    <Route path='/speech' component={Speech} />
 
                 </Switch>
 

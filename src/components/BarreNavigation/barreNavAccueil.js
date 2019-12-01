@@ -37,6 +37,9 @@ export default class NavBarAccueil extends Component {
     profil = event => {
         window.location = "/profil";
     }
+    speech = event => {
+        window.location = "/speech";
+    }
     buttonConnect = test => {
         if (test === true){
             return (        <nav className="navbar navbar-default">
@@ -48,6 +51,7 @@ export default class NavBarAccueil extends Component {
                         <li> < a onClick={this.stat} href = "#" > Statistiques </a></li >
                         <li> <a onClick={this.profil} href = "#" > Profil </a></li>
                         <li> <a onClick={this.upload} href = "#" > Upload </a></li>
+                        <li> <a onClick={this.speech} href = "#" > Reconnaissance Vocale </a></li>
                         <li className="buttonTop"> <a href = "#" >   </a>  </li>
                         <li className="buttonTop">         <Button className="buttonTop1"
                             onClick={this.disconnect}
