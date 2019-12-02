@@ -15,7 +15,7 @@ import { Signup } from './signup/signup.js';
 import { upload } from './upload/upload';
 import {Profil} from './Profil/Profil.js';
 import {Speech} from './ReconnaissanceVocale/speech.js';
-
+import {ExamplePDFViewer} from './AffichageDoc/pdfViewer.js'
 
 
 export default class App extends Component {
@@ -41,6 +41,7 @@ export default class App extends Component {
                     <Route path='/upload' component={upload} />
                     <Route path='/profil' component={Profil} />
                     <Route path='/speech' component={Speech} />
+                    <Route path='/pdfViewer' component={ExamplePDFViewer} />
 
                 </Switch>
 

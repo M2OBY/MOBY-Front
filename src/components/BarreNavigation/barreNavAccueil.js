@@ -40,6 +40,9 @@ export default class NavBarAccueil extends Component {
     speech = event => {
         window.location = "/speech";
     }
+    document = event => {
+        window.location = "/pdfViewer";
+    }
     buttonConnect = test => {
         if (test === true){
             return (        <nav className="navbar navbar-default">
@@ -52,6 +55,7 @@ export default class NavBarAccueil extends Component {
                         <li> <a onClick={this.profil} href = "#" > Profil </a></li>
                         <li> <a onClick={this.upload} href = "#" > Upload </a></li>
                         <li> <a onClick={this.speech} href = "#" > Reconnaissance Vocale </a></li>
+                        <li> <a onClick={this.document} href = "#" > PDF </a></li>
                         <li className="buttonTop"> <a href = "#" >   </a>  </li>
                         <li className="buttonTop">         <Button className="buttonTop1"
                             onClick={this.disconnect}
