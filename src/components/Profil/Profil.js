@@ -12,7 +12,7 @@ export class Profil extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: "",
+            email: localStorage.getItem('email'),
             password: "",
             sex:"Homme",
             nom:"",

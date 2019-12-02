@@ -1,40 +1,4 @@
 
-/* import React, { Component } from 'react';
-import PDFViewer from 'pdf-viewer-reactjs';
-
-export class ExamplePDFViewer extends React.Component {
-    state = {
-        page : 5,
-        document:{url:'https://arxiv.org/pdf/quant-ph/0410100.pdf'}
-    }
-     ExamplePDFViewer = () => {
-        return (
-            <PDFViewer
-                document={{
-                    url: 'https://arxiv.org/pdf/quant-ph/0410100.pdf',
-                }}
-            />
-        )
-    }
-
-    render() {
-      
-  
-        return (
-
-        
-          <div>
-              <PDFViewer
-                document={{
-                    url: 'https://arxiv.org/pdf/quant-ph/0410100.pdf',
-                    //page : 5
-                }}
-            />
-         <button value="hello" onClick=""></button>
-          </div>
-        );
-      }
-} */
 import React from 'react';
 import { Container, Header, Grid, Form } from 'semantic-ui-react';
 import { Document, Page } from 'react-pdf';
@@ -95,11 +59,23 @@ export class ExamplePDFViewer extends React.Component {
     const currentPageNumber = this.state.pageNumber;
     let prevPageNumber;
 
-    if (currentPageNumber + 1 > this.state.numPages) {
+    if (currentPageNumber - 1 < 1) {
       prevPageNumber = 1;
     } else {
       prevPageNumber = currentPageNumber - 1;
     }
+
+    this.setState({
+      pageNumber: prevPageNumber
+    });
+  }
+
+  recherchePage = (numeroPages) => {
+
+    const currentPageNumber = this.state.pageNumber;
+    let prevPageNumber;
+
+      prevPageNumber = numeroPages;
 
     this.setState({
       pageNumber: prevPageNumber
@@ -148,11 +124,12 @@ export class ExamplePDFViewer extends React.Component {
         if (event.results[i].isFinal) finalTranscript += transcript + ' ';
         else interimTranscript += transcript;
       }
+      
      // document.getElementById('interim').innerHTML = interimTranscript
       //document.getElementById('final').innerHTML = finalTranscript
      //*************Resultat******************* */
-      if(interimTranscript === 'suivant'){
-        console.log(finalTranscript);
+      if(interimTranscript ==='suivant'){
+          console.log(finalTranscript);
         //document.getElementById('resultat').innerHTML = "Bravo"
         this.nextPage();
       }
@@ -161,13 +138,19 @@ export class ExamplePDFViewer extends React.Component {
         //document.getElementById('resultat').innerHTML = "Bravo"
         this.prevPage();   
       }
+      else if(interimTranscript === '8'){
+        let numeroPage = 8;
+        console.log(finalTranscript);
+        //document.getElementById('resultat').innerHTML = "Bravo"
+        this.recherchePage(numeroPage);   
+      }
     //-------------------------COMMANDS------------------------------------
 
       const transcriptArr = finalTranscript.split(' ')
       const stopCmd = transcriptArr.slice(-3, -1)
       console.log('stopCmd', stopCmd)
 
-      if (stopCmd[0] === 'stop' && stopCmd[1] === 'stop'){
+      if (stopCmd[0] === 'stop'){
         recognition.stop()
         recognition.onend = () => {
           console.log('Stopped listening per command')
@@ -198,6 +181,7 @@ export class ExamplePDFViewer extends React.Component {
           <input type="file" onChange={this.onFileChange}>
           </input>
         </Form>
+
         <Grid centered columns={2}>
           <Grid.Column textAlign="center" onClick={this.nextPage}>
 
