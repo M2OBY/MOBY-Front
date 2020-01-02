@@ -34,10 +34,10 @@ export default class NavBarAccueil extends Component {
 
         window.location = "/signup";
     }
-    /* profil = event => {
+     profil = event => {
         window.location = "/profil";
-    } */
-    speech = event => {
+    }
+        speech = event => {
         window.location = "/speech";
     }
     document = event => {
@@ -51,11 +51,14 @@ export default class NavBarAccueil extends Component {
                     <ul className = "nav navbar-nav" >
                         <li className = "active" > <a href = "#" > Home </a></li >
 
+                        <li> <a onClick={this.profil} href = "#" > Profil user </a></li>
+                        
                         {/* <li> < a onClick={this.stat} href = "#" > Statistiques </a></li > */}
                         {/* <li> <a onClick={this.profil} href = "#" > Profil </a></li> */}
                         <li> <a onClick={this.upload} href = "#" > Upload </a></li>
                         <li> <a onClick={this.speech} href = "#" > Reconnaissance Vocale </a></li>
                         <li> <a onClick={this.document} href = "#" > Support de Cours </a></li>
+            
                         <li className="buttonTop"> <a href = "#" >   </a>  </li>
                         <li className="buttonTop">         <Button className="buttonTop1"
                             onClick={this.disconnect}
@@ -125,6 +128,3 @@ let x ;
     );
     }
 }
-
-
-
