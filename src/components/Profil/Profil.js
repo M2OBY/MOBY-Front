@@ -78,7 +78,7 @@ export class Profil extends React.Component {
             <FormLabel className="titleProfil"> Profil</FormLabel>
 
                  <FormGroup controlId = "Sex" bsSize="large">
-                 <FormLabel>sex</FormLabel>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                 <FormLabel>Sex</FormLabel>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <DropdownList
                 data={["Homme","Femme", "Indéterminé"]}
                 value = {this.state.sex}
