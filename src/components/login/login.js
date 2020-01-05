@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, FormGroup, FormLabel,FormControl } from "react-bootstrap";
 import API from '../../utils/API';
 import '../../assets/css/index.css';
-
+import '../../assets/css/kidsIndex.css';
 
 
 export class Login extends React.Component {
@@ -33,27 +33,18 @@ export class Login extends React.Component {
             //window.location = "/"
             return;
         }
-
+        localStorage.setItem('email', this.state.email);
         API.login(this.state.email, this.state.password).then(function (data) {
-            console.log("hahaha")
-            localStorage.setItem('token', data.data.token);
-            localStorage.setItem('user', data.data.user);
-            localStorage.setItem('nom', data.data.Nom);
-            localStorage.setItem('prenom', data.data.Prénom);
-            localStorage.setItem('sex', data.data.Sex);
-            localStorage.setItem('age', data.data.Age);
-            window.location = "/dashboard"
-        }, function (error ) {
+            let dataProfil = data.config.data.substr(data.config.data.indexOf("email")+8,data.config.data.indexOf(",")-11 )
+            console.log("hahaha"," ",data.config.data)
+            localStorage.setItem('token', dataProfil);
 
-            });
+            localStorage.setItem('email', dataProfil);
 
-        localStorage.setItem('text', "pass ou user invalid");
-        this.setState({
-            ...this.state
-        });
-            ///console.log(error);
-         //  window.location = "/";
-            return  ;
+           //window.location = "/dashboard"
+            return data
+        })
+
 
     }
     handleChange = event => {

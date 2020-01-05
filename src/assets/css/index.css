@@ -17,7 +17,8 @@ background-color: slategray;
     padding: 100px;
         height: 600px;
         width: 100%;
-        background-image: url("../images/image\ fd\ ecran.png   ");
+    background: linear-gradient(to right, #40e0d0, #1bbfaf);
+       /* background-image: url("../images/image\ fd\ ecran.png   ");*/
     }
 
 .Profil{
@@ -35,7 +36,7 @@ background-color: slategray;
 padding: 100px;
     height: 600px;
     width: 100%;
-    background-image: url("../images/backg2.png");
+    background: linear-gradient(to right, #40e0d0, #1bbfaf);
 }
 .trendWrapper {
     height: 250px;

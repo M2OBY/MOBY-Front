@@ -1,30 +1,29 @@
 import axios from 'axios';
 const headers = {
     'Content-Type': 'application/json',
-
+    'withCredentials':true
 }
 const burl = "http://localhost:5000"
 export default {
     login : function(email,password) {
-
+        console.log("loginAPI",email,password)
         return axios.post(burl + '/users/login',{
             'email' : email,
             'password' : password
         },{
-            headers: headers
+            headers: headers,'withCredentials':true
         })
     },     verif : function(token) {
         return axios.post(burl + '/users/verify',{
-            'token' : token
+            'secretToken' : token
 
         },{
             headers: headers
         })
     },
-    profil : function(email, password,Age, Nom, Sex, prenom){
-        return axios.post(burl + '/user/Profil/miseajour',{
+    miseAjourProfil : function(email, password,Age, Nom, Sex, prenom){
+        return axios.post(burl + '/users/Profil/miseajour',{
             'email' : email,
-            'password' : password,
             'sex' : Sex,
             'age' : Age,
             'nom' : Nom,
@@ -32,7 +31,13 @@ export default {
         },{
              headers: headers
         })
-},
+}, affichageProfil : function(email){
+        return axios.post(burl + '/users/profil',{
+            'email' : email,
+        },{
+            headers: headers
+        })
+    },
     signup : function(send){ console.log("send",send)
         return axios.post(burl + '/users/register',send,{headers: headers})
     },

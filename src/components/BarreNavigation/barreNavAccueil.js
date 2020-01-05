@@ -18,6 +18,10 @@ export default class NavBarAccueil extends Component {
 
     connect = event => {
 
+        window.location = "/login";
+    }
+    dashboard = event => {
+
         window.location = "/";
     }
     upload = event => {
@@ -43,7 +47,7 @@ export default class NavBarAccueil extends Component {
                 <div className= "container-fluid" >
                     <div className= "navbar-header" > <a className = "navbar-brand" href = "#" >  </a> </div>
                     <ul className = "nav navbar-nav" >
-                        <li className = "active" > <a href = "#" > Home </a></li >
+                        <li className = "active" > <a   onClick={this.dashboard}href = "#" > Home </a></li >
 
                         <li> < a onClick={this.stat} href = "#" > Statistiques </a></li >
                         <li> <a onClick={this.profil} href = "#" > Profil </a></li>

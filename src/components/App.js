@@ -33,12 +33,12 @@ export default class App extends Component {
                 <NavAccueil/>
 
                 <Switch>
-                    <Route exact path="/" component={Login}/>
+                    <Route exact path="/login" component={Login}/>
                     <Route exact path ="/signup" component={Signup}/>
-                    <Route path='/dashboard' component={Dashboard} />
-                    <Route path='/verif' component={Verif} />
-                    <Route path='/upload' component={upload} />
-                    <Route path='/profil' component={Profil} />
+                    <Route exact path='/' component={Dashboard} />
+                    <Route exact path='/verif' component={Verif} />
+                    <Route exact path='/upload' component={upload} />
+                    <Route exact path='/profil' component={Profil} />
 
                 </Switch>
 

@@ -30,7 +30,7 @@ export class Verif extends React.Component {
         API.verif(this.state.token).then(function (data) {
             console.log("verif : ",data)
 
-            window.location = "/dashboard"
+            window.location = "/"
         }, function (error ) {
 
             });

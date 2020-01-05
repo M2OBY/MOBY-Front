@@ -1,23 +1,28 @@
 import React from 'react';
 import { Button, FormGroup, FormLabel,FormControl } from "react-bootstrap";
 import API from '../../utils/API';
-import '../../assets/css/index.css';
+//import '../../assets/css/index.css';
 import classNames from 'classnames';
 import {DropdownList} from "react-widgets";
 import "bootstrap/dist/css/bootstrap.min.css";
 import 'react-widgets/dist/css/react-widgets.css';
-
+import '../../assets/css/kidsIndex.css';
 
 export class Profil extends React.Component {
     constructor(props) {
         super(props);
+        console.log("email",localStorage.getItem("email"))
+        let data =  API.affichageProfil(localStorage.getItem("email")).then(function (data) {
+            console.log("dataa",data)
+        })
+
         this.state = {
-            email: "",
-            password: "",
-            sex:"Homme",
-            nom:"",
-            age:"",
-            prenom:"",
+            email: data.email,
+            username: localStorage.getItem('user'),
+            sex:localStorage.getItem('sex'),
+            nom:localStorage.getItem('nom'),
+            age:localStorage.getItem('age'),
+            prenom:localStorage.getItem('prenom'),
 
         }
         this.handleChange.bind(this);
@@ -88,17 +93,17 @@ export class Profil extends React.Component {
 
                  <FormGroup controlId="Nom" bsSize="large">
                     <FormLabel>Nom</FormLabel>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <FormControl id = "nom" type="Nom" value={this.state.Nom} onChange={this.handleChange}/>
+                    <FormControl id = "nom" type="Nom" value={this.state.nom} onChange={this.handleChange}/>
                  </FormGroup>
 
                  <FormGroup controlId="Prénom" bsSize="large">
                     <FormLabel>Prénom</FormLabel>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <FormControl id="prenom" type="Prénom" value={this.state.Prénom} onChange={this.handleChange}/>
+                    <FormControl id="prenom" type="Prénom" value={this.state.prenom} onChange={this.handleChange}/>
                  </FormGroup>
 
                  <FormGroup controlId="Age" bsSize="large">
                     <FormLabel>Age</FormLabel>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <FormControl autoFocus type="Age" value={this.state.Age} onChange={this.handleChange}/>
+                    <FormControl autoFocus type="Age" value={this.state.age} onChange={this.handleChange}/>
                  </FormGroup>
 
 
