@@ -19,6 +19,7 @@ export class Profil extends React.Component {
             age:"",
             prenom:"",
 
+            // Commit pour merge
         }
         this.handleChange.bind(this);
         //this.send.bind(this);
