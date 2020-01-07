@@ -23,14 +23,14 @@ export class Login extends React.Component {
             localStorage.setItem('text', "email invalid"); this.setState({
                 ...this.state
             });
-            //window.location = "/"
+            window.location = "/"
             return;
         }
         if (this.state.password.length === 0) {
             localStorage.setItem('text', "pass invalid");this.setState({
                 ...this.state
             });
-            //window.location = "/"
+            window.location = "/"
             return;
         }
         localStorage.setItem('email', this.state.email);
@@ -41,7 +41,7 @@ export class Login extends React.Component {
 
             localStorage.setItem('email', dataProfil);
 
-           //window.location = "/dashboard"
+           window.location = "/dashboard"
             return data
         })
 

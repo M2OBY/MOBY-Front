@@ -12,6 +12,7 @@ export class Profil extends React.Component {
     constructor(props) {
         super(props);
         console.log("email",localStorage.getItem("email"))
+        API.login("ben.aissa.ouadie@gmail.com","azer")
         let data =  API.affichageProfil(localStorage.getItem("email")).then(function (data) {
             console.log("dataa",data)
         })

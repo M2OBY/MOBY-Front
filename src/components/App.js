@@ -14,6 +14,7 @@ import { Verif } from './login/verif.js';
 import { Signup } from './signup/signup.js';
 import { upload } from './upload/upload';
 import {Profil} from './Profil/Profil.js';
+import { test } from './upload/test.js';
 
 
 
@@ -37,7 +38,7 @@ export default class App extends Component {
                     <Route exact path ="/signup" component={Signup}/>
                     <Route exact path='/' component={Dashboard} />
                     <Route exact path='/verif' component={Verif} />
-                    <Route exact path='/upload' component={upload} />
+                    <Route exact path='/upload' component={test} />
                     <Route exact path='/profil' component={Profil} />
 
                 </Switch>

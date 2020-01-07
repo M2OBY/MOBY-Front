@@ -1,7 +1,9 @@
 import axios from 'axios';
+import request   from 'request'
+
 const headers = {
     'Content-Type': 'application/json',
-    'withCredentials':true
+
 }
 const burl = "http://localhost:5000"
 export default {
@@ -10,10 +12,8 @@ export default {
         return axios.post(burl + '/users/login',{
             'email' : email,
             'password' : password
-        },{
-            headers: headers,'withCredentials':true
         })
-    },     verif : function(token) {
+    },   verif : function(token) {
         return axios.post(burl + '/users/verify',{
             'secretToken' : token
 
@@ -47,6 +47,9 @@ export default {
     upload : function(send){
         console.log(send)
         return axios.post(burl + '/media',send,{headers: headers})
+    },   charger : function(send){
+        console.log(send)
+        return axios.get(burl + '/media/files',send,{headers: headers})
     },
 
     isAuth : function() {
