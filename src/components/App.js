@@ -8,7 +8,7 @@ import NavAccueil from './BarreNavigation/barreNavAccueil';
 
 
 import { Route, Switch } from 'react-router-dom';
-import { Dashboard } from './Dashboard/Dashboard.js';
+import { Dashboard } from './Dashboard/Dashboard';
 import { Login } from './login/login.js';
 import { Verif } from './login/verif.js';
 import { Signup } from './signup/signup.js';

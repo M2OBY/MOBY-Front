@@ -24,11 +24,11 @@ export default class NavBarAccueil extends Component {
 
         window.location = "/upload";
     }
-    /* stat = event => {
+   dashboard = event => {
 
-        window.location = "/statistique";
+        window.location = "/Dashboard";
 
-    } */
+    }
 
     inscription= event => {
 
@@ -49,7 +49,7 @@ export default class NavBarAccueil extends Component {
                 <div className= "container-fluid" >
                     <div className= "navbar-header" > <a className = "navbar-brand" href = "#" >  </a> </div>
                     <ul className = "nav navbar-nav" >
-                        <li className = "active" > <a href = "#" > Home </a></li >
+                        <li className = "active" > <a href = "#" onClick={this.dashboard}> Home </a></li >
 
                         <li> <a onClick={this.profil} href = "#" > Profil user </a></li>
                         
