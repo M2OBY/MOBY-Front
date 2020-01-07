@@ -7,7 +7,7 @@ body {
     width: 40%;
     max-width: 600px;
     margin: auto;
-    background-color: slategray;
+    background-color:#40e0d0;
     padding: 30px;
     border-radius: 20px;
 
@@ -64,7 +64,7 @@ body {
 }
 
 .buttonTop1{
-    margin: 10px;
+    margin: 11px;
 }
 .erreur{
     color: red;
