@@ -1,10 +1,9 @@
+import React from 'react';
 
 
 import API from '../../utils/API';
 
 import '../../assets/css/kidsIndex.css';
-import Dash from './Dash';
-import React from "react";
 
 
 export class Dashboard extends React.Component {
@@ -39,7 +38,6 @@ export class Dashboard extends React.Component {
 
 
     render() {
-
         return (
             <div className="Dashboard">
 
@@ -47,7 +45,7 @@ export class Dashboard extends React.Component {
                 <div  className="interface">
                     <div className="container">
 
-                     <Dash/>
+
 
                     </div>
                 </div>

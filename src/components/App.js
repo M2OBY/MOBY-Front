@@ -14,8 +14,8 @@ import { Verif } from './login/verif.js';
 import { Signup } from './signup/signup.js';
 import { upload } from './upload/upload';
 import {Profil} from './Profil/Profil.js';
-import { test } from './upload/test.js';
-
+import {Speech} from './ReconnaissanceVocale/speech.js';
+import {ExamplePDFViewer} from './AffichageDoc/pdfViewer.js'
 
 
 export default class App extends Component {
@@ -34,12 +34,14 @@ export default class App extends Component {
                 <NavAccueil/>
 
                 <Switch>
-                    <Route exact path="/login" component={Login}/>
+                    <Route exact path="/" component={Login}/>
                     <Route exact path ="/signup" component={Signup}/>
-                    <Route exact path='/' component={Dashboard} />
-                    <Route exact path='/verif' component={Verif} />
-                    <Route exact path='/upload' component={test} />
-                    <Route exact path='/profil' component={Profil} />
+                    <Route path='/dashboard' component={Dashboard} />
+                    <Route path='/verif' component={Verif} />
+                    <Route path='/upload' component={upload} />
+                    <Route path='/profil' component={Profil} />
+                    <Route path='/speech' component={Speech} />
+                    <Route path='/pdfViewer' component={ExamplePDFViewer} />
 
                 </Switch>
 

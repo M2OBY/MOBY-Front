@@ -16,6 +16,7 @@
     "react-awesome-modal": "^2.0.5",
     "react-bootstrap": "^1.0.0-beta.8",
     "react-dom": "^16.2.0",
+    "react-pdf": "^4.1.0",
     "react-redux": "^6.0.1",
     "react-router-dom": "^5.0.0",
     "react-scripts": "1.1.1",
@@ -26,7 +27,8 @@
     "redux": "^4.0.1",
     "redux-minimal-code-async-actions": "^1.0.5",
     "redux-thunk": "^2.3.0",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "semantic-ui-react": "^0.88.2"
   },
   "scripts": {
     "start": "react-scripts start",

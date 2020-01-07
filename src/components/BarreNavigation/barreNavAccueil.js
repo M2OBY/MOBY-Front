@@ -18,28 +18,30 @@ export default class NavBarAccueil extends Component {
 
     connect = event => {
 
-        window.location = "/login";
-    }
-    dashboard = event => {
-
         window.location = "/";
     }
     upload = event => {
 
         window.location = "/upload";
     }
-    stat = event => {
+    /* stat = event => {
 
         window.location = "/statistique";
 
-    }
+    } */
 
     inscription= event => {
 
         window.location = "/signup";
     }
-    profil = event => {
+     profil = event => {
         window.location = "/profil";
+    }
+        speech = event => {
+        window.location = "/speech";
+    }
+    document = event => {
+        window.location = "/pdfViewer";
     }
     buttonConnect = test => {
         if (test === true){
@@ -47,11 +49,16 @@ export default class NavBarAccueil extends Component {
                 <div className= "container-fluid" >
                     <div className= "navbar-header" > <a className = "navbar-brand" href = "#" >  </a> </div>
                     <ul className = "nav navbar-nav" >
-                        <li className = "active" > <a   onClick={this.dashboard}href = "#" > Home </a></li >
+                        <li className = "active" > <a href = "#" > Home </a></li >
 
-                        <li> < a onClick={this.stat} href = "#" > Statistiques </a></li >
-                        <li> <a onClick={this.profil} href = "#" > Profil </a></li>
+                        <li> <a onClick={this.profil} href = "#" > Profil user </a></li>
+                        
+                        {/* <li> < a onClick={this.stat} href = "#" > Statistiques </a></li > */}
+                        {/* <li> <a onClick={this.profil} href = "#" > Profil </a></li> */}
                         <li> <a onClick={this.upload} href = "#" > Upload </a></li>
+                        <li> <a onClick={this.speech} href = "#" > Reconnaissance Vocale </a></li>
+                        <li> <a onClick={this.document} href = "#" > Support de Cours </a></li>
+            
                         <li className="buttonTop"> <a href = "#" >   </a>  </li>
                         <li className="buttonTop">         <Button className="buttonTop1"
                             onClick={this.disconnect}
@@ -121,6 +128,3 @@ let x ;
     );
     }
 }
-
-
-
