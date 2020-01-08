@@ -144,6 +144,36 @@ export class ExamplePDFViewer extends React.Component {
         //document.getElementById('resultat').innerHTML = "Bravo"
         this.recherchePage(numeroPage);   
       }
+      else if(interimTranscript === '5'){
+        let numeroPage = 5;
+        console.log(finalTranscript);
+        //document.getElementById('resultat').innerHTML = "Bravo"
+        this.recherchePage(numeroPage);   
+      }
+      else if(interimTranscript === '10'){
+        let numeroPage = 10;
+        console.log(finalTranscript);
+        //document.getElementById('resultat').innerHTML = "Bravo"
+        this.recherchePage(numeroPage);   
+      }
+      else if(interimTranscript === '2'){
+        let numeroPage = 2;
+        console.log(finalTranscript);
+        //document.getElementById('resultat').innerHTML = "Bravo"
+        this.recherchePage(numeroPage);   
+      }
+      else if(interimTranscript === '3'){
+        let numeroPage = 3;
+        console.log(finalTranscript);
+        //document.getElementById('resultat').innerHTML = "Bravo"
+        this.recherchePage(numeroPage);   
+      }
+      else if(interimTranscript === '7'){
+        let numeroPage = 7;
+        console.log(finalTranscript);
+        //document.getElementById('resultat').innerHTML = "Bravo"
+        this.recherchePage(numeroPage);   
+      }
     //-------------------------COMMANDS------------------------------------
 
       const transcriptArr = finalTranscript.split(' ')

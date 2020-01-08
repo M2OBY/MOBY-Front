@@ -12,6 +12,7 @@ const SpeechRecognitionList = new SpeechGrammarList();
   recognition.grammars = SpeechRecognitionList;
 //************************************ */
 recognition.continous = true
+
 recognition.interimResults = true
 recognition.lang = 'fr-FR'
 
