@@ -23,25 +23,28 @@ export class Login extends React.Component {
             localStorage.setItem('text', "email invalid"); this.setState({
                 ...this.state
             });
-            //window.location = "/"
+            window.location = "/"
             return;
         }
         if (this.state.password.length === 0) {
             localStorage.setItem('text', "pass invalid");this.setState({
                 ...this.state
             });
-            //window.location = "/"
+            window.location = "/"
             return;
         }
 
         API.login(this.state.email, this.state.password).then(function (data) {
-            console.log("hahaha")
-            localStorage.setItem('token', data.data.token);
-            localStorage.setItem('user', data.data.user);
-            localStorage.setItem('nom', data.data.Nom);
-            localStorage.setItem('prenom', data.data.Prénom);
-            localStorage.setItem('sex', data.data.Sex);
-            localStorage.setItem('age', data.data.Age);
+            console.log("hahaha",data)
+            localStorage.setItem('secretToken', data.data.user.secretToken);
+            localStorage.setItem('user', data.data.user.username);
+            sessionStorage.setItem('secretToken', data.data.user.secretToken);
+            sessionStorage.setItem('user', data.data.user.username);
+            localStorage.setItem('email', data.data.user.email);
+            localStorage.setItem('nom', data.data.user.nom);
+            localStorage.setItem('prenom', data.data.user.prenom);
+            localStorage.setItem('sex', data.data.user.sex);
+            localStorage.setItem('age', data.data.user.age);
             window.location = "/dashboard"
         }, function (error ) {
 

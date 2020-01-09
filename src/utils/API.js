@@ -1,10 +1,13 @@
 import axios from 'axios';
 const headers = {
     'Content-Type': 'application/json',
-
+  //  credentials : 'same-origin'
+  //  credentials : 'same-origin'
 }
 const burl = "http://localhost:5000"
+
 export default {
+
     login : function(email,password) {
 
         return axios.post(burl + '/users/login',{
@@ -15,23 +18,29 @@ export default {
         })
     },     verif : function(token) {
         return axios.post(burl + '/users/verify',{
-            'token' : token
+            'secretToken' : token
 
         },{
             headers: headers
-        })
+        },)
     },
-    profil : function(email, password,Age, Nom, Sex, prenom){
-        return axios.post(burl + '/user/Profil/miseajour',{
+    profil : function(email, password,age, nom, sex, prenom){
+        return axios.post(burl + '/users/Profil/',{
             'email' : email,
             'password' : password,
-            'sex' : Sex,
-            'age' : Age,
-            'nom' : Nom,
+            'sex' : sex,
+            'age' : age,
+            'nom' : nom,
             'prenom' : prenom
         },{
              headers: headers
         })
+}, affichageProfil : function(email){
+    return axios.post(burl + '/users/profil',{
+        'email' : email,
+    },{
+        headers: headers
+    })
 },
     signup : function(send){ console.log("send",send)
         return axios.post(burl + '/users/register',send,{headers: headers})
@@ -42,10 +51,13 @@ export default {
     upload : function(send){
         console.log(send)
         return axios.post(burl + '/media',send,{headers: headers})
+    }, charger : function(send){
+        console.log(burl + '/media/files/'+send)
+        return axios.get(burl + '/media/files/'+send,{headers: headers})
     },
 
     isAuth : function() {
-        return (localStorage.getItem('token') !== null);
+        return (localStorage.getItem('email') !== null);
     },
 
     logout : function() {

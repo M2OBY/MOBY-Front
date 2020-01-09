@@ -11,13 +11,16 @@ import 'react-widgets/dist/css/react-widgets.css';
 export class Profil extends React.Component {
     constructor(props) {
         super(props);
+        let user = API.affichageProfil(localStorage.getItem('email'))
+        console.log("profiltestapi",user)
+
         this.state = {
             email: localStorage.getItem('email'),
-            password: "",
-            sex:"Homme",
-            nom:"",
-            age:"",
-            prenom:"",
+            user:localStorage.getItem('user'),
+            sex:localStorage.getItem('sex'),
+            nom:localStorage.getItem('nom'),
+            age:localStorage.getItem('age'),
+            prenom:localStorage.getItem('prenom'),
 
             // Commit pour merge
         }
@@ -87,19 +90,19 @@ export class Profil extends React.Component {
                 />
                  </FormGroup>
 
-                 <FormGroup controlId="Nom" bsSize="large">
+                 <FormGroup controlId="nom" bsSize="large">
                     <FormLabel>Nom</FormLabel>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <FormControl id = "nom" type="Nom" value={this.state.Nom} onChange={this.handleChange}/>
+                    <FormControl id = "nom" type="nom" value={this.state.nom} onChange={this.handleChange}/>
                  </FormGroup>
 
-                 <FormGroup controlId="Prénom" bsSize="large">
+                 <FormGroup controlId="prenom" bsSize="large">
                     <FormLabel>Prénom</FormLabel>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <FormControl id="prenom" type="Prénom" value={this.state.Prénom} onChange={this.handleChange}/>
+                    <FormControl id="prenom" type="prenom" value={this.state.prenom} onChange={this.handleChange}/>
                  </FormGroup>
 
-                 <FormGroup controlId="Age" bsSize="large">
+                 <FormGroup controlId="age" bsSize="large">
                     <FormLabel>Age</FormLabel>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <FormControl autoFocus type="Age" value={this.state.Age} onChange={this.handleChange}/>
+                    <FormControl autoFocus type="age" value={this.state.age} onChange={this.handleChange}/>
                  </FormGroup>
 
 
@@ -108,9 +111,9 @@ export class Profil extends React.Component {
                     <FormControl autoFocus type="email" value={this.state.email} onChange={this.handleChange}/>
                 </FormGroup>
 
-                <FormGroup controlId="password" bsSize="large">
-                    <FormLabel>Password</FormLabel>&nbsp;
-                    <FormControl value={this.state.password} onChange={this.handleChange} type="password"/>
+                <FormGroup controlId="username" bsSize="large">
+                    <FormLabel>username</FormLabel>&nbsp;
+                    <FormControl value={this.state.user} onChange={this.handleChange} type="username"/>
                 </FormGroup>
 
                 <div className="erreur">{localStorage.getItem('text' )}</div>
