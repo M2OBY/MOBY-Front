@@ -203,7 +203,7 @@ export class ExamplePDFViewer extends React.Component {
     const { pageNumber, numPages } = this.state;
 
     return (
-        
+        <div class={"LoginBack"}>
       <Container>
         <br />
         <Header textAlign="center">PDF Preview</Header>
@@ -223,6 +223,7 @@ export class ExamplePDFViewer extends React.Component {
           </Grid.Column>
         </Grid>
       </Container>
+      </div>
     );
   }
 }

@@ -18,7 +18,6 @@ export class Profil extends React.Component {
             nom:"",
             age:"",
             prenom:"",
-
         }
         this.handleChange.bind(this);
         //this.send.bind(this);
@@ -79,6 +78,7 @@ export class Profil extends React.Component {
 
                  <FormGroup controlId = "Sex" bsSize="large">
                  <FormLabel>sex</FormLabel>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                 <FormLabel>Sex</FormLabel>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <DropdownList
                 data={["Homme","Femme", "Indéterminé"]}
                 value = {this.state.sex}
@@ -124,3 +124,4 @@ export class Profil extends React.Component {
             </div> </div>)
     }
 }
+

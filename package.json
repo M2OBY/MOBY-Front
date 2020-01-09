@@ -28,7 +28,8 @@
     "redux": "^4.0.1",
     "redux-minimal-code-async-actions": "^1.0.5",
     "redux-thunk": "^2.3.0",
-    "semantic-ui-react": "^0.88.1"
+    "request": "^2.88.0",
+    "semantic-ui-react": "^0.88.2"
   },
   "scripts": {
     "start": "react-scripts start",

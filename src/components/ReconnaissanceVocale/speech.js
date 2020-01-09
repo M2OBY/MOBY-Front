@@ -12,7 +12,6 @@ const SpeechRecognitionList = new SpeechGrammarList();
   recognition.grammars = SpeechRecognitionList;
 //************************************ */
 recognition.continous = true
-
 recognition.interimResults = true
 recognition.lang = 'fr-FR'
 
@@ -111,12 +110,17 @@ export class Speech extends Component {
 
   render() {
     return (
+        <div class="LoginBack">
+
       <div style={container}>
         <button id='microphone-btn' style={button} onClick={this.toggleListen} />
         <div id='interim' style={interim}></div>
         <div id='final' style={final}></div>
         <div id='resultat' style={resultat}></div>
+
       </div>
+      </div>
+
     )
   }
 }

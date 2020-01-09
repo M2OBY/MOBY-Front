@@ -3,10 +3,6 @@ import '../assets/css/kidsIndex.css';
 
 import NavAccueil from './BarreNavigation/barreNavAccueil';
 
-
-
-
-
 import { Route, Switch } from 'react-router-dom';
 import { Dashboard } from './Dashboard/Dashboard.js';
 import { Login } from './login/login.js';
