@@ -55,8 +55,6 @@ export default class NavBarAccueil extends Component {
 
                         <li> <a onClick={this.profil} href = "#" > Profil user </a></li>
                         
-                        {/* <li> < a onClick={this.stat} href = "#" > Statistiques </a></li > */}
-                        {/* <li> <a onClick={this.profil} href = "#" > Profil </a></li> */}
                         <li> <a onClick={this.upload} href = "#" > Upload </a></li>
                         <li> <a onClick={this.speech} href = "#" > Gestion de fichier </a></li>
                         <li> <a onClick={this.speech} href = "#" > Reconnaissance Vocale </a></li>
@@ -64,7 +62,8 @@ export default class NavBarAccueil extends Component {
                         <li className="buttonTop"> <a href = "#" >   </a>  </li>
                         <li className="buttonTop">         <a className="buttonTop1"
                             onClick={this.disconnect}
-                           href ="#"
+
+                            href="#"
                         >
                             Se déconnecter
                         </a>
@@ -86,11 +85,13 @@ export default class NavBarAccueil extends Component {
                                     href ="#"
                                 >
                                     Gestion de Contenu
+
                                 </a>
                                 </li>
                                 <li className="buttonTop">          <a className="buttonTop1"
                                     onClick={this.inscription}
-                                    href ="#"
+
+                                    href="#"
                                 >
                                     s'inscrire
                                 </a>
