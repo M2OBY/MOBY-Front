@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../assets/css/kidsIndex.css';
 
 import NavAccueil from './BarreNavigation/barreNavAccueil';
+import Footer from './login/footer'
 
 import { Route, Switch } from 'react-router-dom';
 import { Dashboard } from './Dashboard/Dashboard.js';
@@ -11,7 +12,8 @@ import { Signup } from './signup/signup.js';
 import { upload } from './upload/upload';
 import {Profil} from './Profil/Profil.js';
 import {Speech} from './ReconnaissanceVocale/speech.js';
-import {ExamplePDFViewer} from './AffichageDoc/pdfViewer.js'
+import {ExamplePDFViewer} from './AffichageDoc/pdfViewer.js';
+//import {Footer} from './login/footer.js';
 
 
 export default class App extends Component {
@@ -31,6 +33,7 @@ export default class App extends Component {
 
                 <Switch>
                     <Route exact path="/" component={Login}/>
+                    {/* <Route exact path ="/f" component={Footer}/> */}
                     <Route exact path ="/signup" component={Signup}/>
                     <Route path='/dashboard' component={Dashboard} />
                     <Route path='/verif' component={Verif} />
@@ -40,7 +43,7 @@ export default class App extends Component {
                     <Route path='/pdfViewer' component={ExamplePDFViewer} />
 
                 </Switch>
-
+                <Footer/>
             </div>
         );
     }

@@ -9,7 +9,7 @@ export class Verif extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            token: ""
+            secretToken: ""
         }
         this.handleChange.bind(this);
         //this.send.bind(this);
@@ -18,19 +18,19 @@ export class Verif extends React.Component {
     }
 
     send = event => {
-        if (this.state.token.length === 0) {
+        if (this.state.secretToken.length === 0) {
             localStorage.setItem('text', "token invalid"); this.setState({
                 ...this.state
             });
-            //window.location = "/"
+            window.location = "/"
             return;
         }
 
 
-        API.verif(this.state.token).then(function (data) {
+        API.verif(this.state.secretToken).then(function (data) {
             console.log("verif : ",data)
 
-            window.location = "/dashboard"
+            window.location = "/login"
         }, function (error ) {
 
             });
@@ -54,9 +54,9 @@ export class Verif extends React.Component {
 
             <div className="Login">
 
-                <FormGroup controlId="token" bsSize="large">
+                <FormGroup controlId="secretToken" bsSize="large">
                     <FormLabel>Verifier votre email</FormLabel>
-                    <FormControl autoFocus type="token" value={this.state.token} onChange={this.handleChange}/>
+                    <FormControl autoFocus type="secretToken" value={this.state.secretToken} onChange={this.handleChange}/>
                 </FormGroup>
 
 

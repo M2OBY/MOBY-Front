@@ -1,5 +1,7 @@
 
 import React from 'react';
+import API from '../../utils/API';
+
 import { Container, Header, Grid, Form } from 'semantic-ui-react';
 import { Document, Page } from 'react-pdf';
 /************************** */
@@ -15,21 +17,25 @@ recognition.lang = 'fr-FR'
 export class ExamplePDFViewer extends React.Component {
     constructor() {
         super()
+
   this.state = {
     file: null,
     numPages: 0,
     pageNumber: 1,
     listening: false
   }
+
   this.toggleListen = this.toggleListen.bind(this)
   this.handleListen = this.handleListen.bind(this)
 }
 
   onFileChange = (event) => {
-      this.toggleListen();
+    this.toggleListen();
     this.setState({
-      file: event.target.files[0]
+      //file: API.charger("1829982019121578013569655.pdf")
+      file: event.target.files[0] 
     });
+ 
   }
 
   onDocumentLoadSuccess = ({ numPages }) => {
