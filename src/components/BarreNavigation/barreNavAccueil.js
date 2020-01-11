@@ -53,18 +53,15 @@ export default class NavBarAccueil extends Component {
 
                         <li> <a onClick={this.profil} href = "#" > Profil user </a></li>
                         
-                        {/* <li> < a onClick={this.stat} href = "#" > Statistiques </a></li > */}
-                        {/* <li> <a onClick={this.profil} href = "#" > Profil </a></li> */}
                         <li> <a onClick={this.upload} href = "#" > Upload </a></li>
+                        <li> <a onClick={this.speech} href = "#" > Gestion de fichier </a></li>
                         <li> <a onClick={this.speech} href = "#" > Reconnaissance Vocale </a></li>
                         <li> <a onClick={this.document} href = "#" > Support de Cours </a></li>
             
                         <li className="buttonTop"> <a href = "#" >   </a>  </li>
                         <li className="buttonTop">         <Button className="buttonTop1"
                             onClick={this.disconnect}
-                            block
-                            bsSize="large"
-                            type="submit"
+                            href="#"
                         >
                             Se déconnecter
                         </Button>
@@ -81,32 +78,19 @@ export default class NavBarAccueil extends Component {
                             <div className= "navbar-header" ><a className = "navbar-brand" href = "#" >  </a> </div>
                             <ul className = "nav navbar-nav" >
                                 <li className = "active" > <a href = "#" > Home </a></li >
-
-
-
-
-
-
-
-
-
-                                <li className="buttonTop">          <Button className="buttonTop1"
+                                <li className="buttonTop">          <a className="buttonTop1"
                                     onClick={this.connect}
-                                    block
-                                    bsSize="large"
-                                    type="submit"
+                                    href="#"
                                 >
-                                    connecter
-                                </Button>
+                                    Gestion de contenu
+                                </a>
                                 </li>
-                                <li className="buttonTop">          <Button className="buttonTop1"
+                                <li className="buttonTop">          <a className="buttonTop1"
                                     onClick={this.inscription}
-                                    block
-                                    bsSize="large"
-                                    type="submit"
+                                    href="#"
                                 >
                                     s'inscrire
-                                </Button>
+                                </a>
                                 </li>
 
                             </ul>
