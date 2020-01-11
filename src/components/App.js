@@ -13,7 +13,7 @@ import { upload } from './upload/upload';
 import {Profil} from './Profil/Profil.js';
 import {Speech} from './ReconnaissanceVocale/speech.js';
 import {ExamplePDFViewer} from './AffichageDoc/pdfViewer.js';
-//import {Footer} from './login/footer.js';
+import {File} from './AffichageFile/viewFile.js';
 
 
 export default class App extends Component {
@@ -33,7 +33,6 @@ export default class App extends Component {
 
                 <Switch>
                     <Route exact path="/" component={Login}/>
-                    {/* <Route exact path ="/f" component={Footer}/> */}
                     <Route exact path ="/signup" component={Signup}/>
                     <Route path='/dashboard' component={Dashboard} />
                     <Route path='/verif' component={Verif} />
@@ -41,6 +40,7 @@ export default class App extends Component {
                     <Route path='/profil' component={Profil} />
                     <Route path='/speech' component={Speech} />
                     <Route path='/pdfViewer' component={ExamplePDFViewer} />
+                    <Route path ='/files' component={File}/>
 
                 </Switch>
                 <Footer/>

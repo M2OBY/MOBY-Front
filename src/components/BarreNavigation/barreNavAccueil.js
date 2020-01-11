@@ -45,6 +45,9 @@ export default class NavBarAccueil extends Component {
     document = event => {
         window.location = "/pdfViewer";
     }
+    viewFiles = event => {
+        window.location = "/files";
+    }
     buttonConnect = test => {
         if (test === true){
             return (        <nav className="navbar navbar-default">
@@ -56,7 +59,7 @@ export default class NavBarAccueil extends Component {
                         <li> <a onClick={this.profil} href = "#" > Profil user </a></li>
                         
                         <li> <a onClick={this.upload} href = "#" > Upload </a></li>
-                        <li> <a onClick={this.speech} href = "#" > Gestion de fichier </a></li>
+                        <li> <a onClick={this.viewFiles} href = "#" > Gestion de fichier </a></li>
                         <li> <a onClick={this.speech} href = "#" > Reconnaissance Vocale </a></li>
                         <li> <a onClick={this.document} href = "#" > Support de Cours </a></li>
                         <li className="buttonTop"> <a href = "#" >   </a>  </li>
