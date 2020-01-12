@@ -2,11 +2,11 @@
 import React, { Component } from 'react';
 import {Button} from "react-bootstrap";
 import API from "../../utils/API";
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, NavLink } from 'reactstrap';
+import { Collapse, Navbar,NavbarText,div, NavbarToggler, NavbarBrand, Nav, NavItem, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom'
 import '../../assets/css/index.css';
 
-export default class NavBarAccueil extends Component {
+export default class NavBarAccueil extends React.Component {
 
     constructor(props) {
         super(props);
@@ -50,7 +50,8 @@ export default class NavBarAccueil extends Component {
     }
     buttonConnect = test => {
         if (test === true){
-            return (        <nav className="navbar navbar-default">
+            return (       
+                  {/* <nav className="navbar navbar-default">
                 <div className= "container-fluid" >
                     <div className= "navbar-header" > <a className = "navbar-brand" href = "#" >  </a> </div>
                     <ul className = "nav navbar-nav" >
@@ -74,11 +75,25 @@ export default class NavBarAccueil extends Component {
 
                     </ul>
                 </div>
-            </nav>)}
+            </nav> */}
+                <div>
+                    <Navbar color="light" light expand="md">
+                    <NavbarBrand href="#" onClick={this.dashboard}>Home</NavbarBrand>
+                      {/* <NavbarToggler onClick={toggle} />  */}
+                    <Collapse navbar>
+                        <NavbarBrand href="#" onClick={this.profil}>Profil user</NavbarBrand>
+                        <NavbarBrand href="#" onClick={this.upload}>Upload</NavbarBrand>
+                        <NavbarBrand href="#" onClick={this.speech}>Reconnaissance Vocale</NavbarBrand>
+                        <NavbarBrand href="#" onClick ={this.document}>Support de Cours</NavbarBrand>
+                        <NavbarBrand href="#" onClick ={this.disconnect}>Se déconnecter</NavbarBrand>
+                    </Collapse>
+                    </Navbar>
+                </div>         
+            )}
 
             else {
                 return(
-                     <nav className="navbar navbar-default">
+                 /*     <nav className="navbar navbar-default">
                         <div className= "container-fluid" >
                             <div className= "navbar-header" ><a className = "navbar-brand" href = "#" >  </a> </div>
                             <ul className = "nav navbar-nav" >
@@ -101,7 +116,20 @@ export default class NavBarAccueil extends Component {
                                 </li>
                             </ul>
                         </div>
-                    </nav>
+                    </nav> */
+
+                    <div>
+                    <Navbar color="light" light expand="md">
+                      <NavbarBrand href="#" onClick={this.connect}>Home</NavbarBrand>
+                      {/* <NavbarToggler onClick={toggle} /> */}
+                      <Collapse navbar>
+                        <Nav className="ml-auto" navbar>
+                        </Nav>
+                        <NavbarBrand href="#" onClick={this.document}>Gestion de Contenu</NavbarBrand>
+                        <NavbarBrand href="#" onClick ={this.inscription}>S'inscrire</NavbarBrand>
+                      </Collapse>
+                    </Navbar>
+                  </div>
                       
 
                 )
