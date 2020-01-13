@@ -5,27 +5,32 @@ const headers = {
   //  credentials : 'same-origin'
 
 }
-const AuthStr = 'Bearer '.concat(localStorage.getItem("secretToken"));
+
 const headers1 = {
     'Content-Type': 'application/json',
     //  credentials : 'same-origin'
     //  credentials : 'same-origin'
-    "Authorization": "Bearer " + localStorage.getItem("secretToken")
+   'Authorization': localStorage.getItem("token")
 }
 const burl = "http://localhost:5000"
 
 export default {
 
     login : function(email,password) {
-        console.log('login',localStorage.getItem("secretToken"))
+
 
         return axios.post(burl + '/users/login',{
             'email' : email,
             'password' : password
         },{
             headers: headers
+
         ,},)
-    },     verif : function(token) {
+
+        }
+        //window.localStorage.setItem("secretToken", query.token);
+
+    ,     verif : function(token) {
         return axios.post(burl + '/users/verify',{
             'secretToken' : token
 
@@ -45,6 +50,7 @@ export default {
              headers: headers
         })
 }, affichageProfil : function(email){
+        console.log("Token-Page-AffichgageProfil",localStorage.getItem("token"))
     return axios.post(burl + '/users/profil',{
         'email' : email,
     },{
@@ -66,7 +72,10 @@ export default {
     },
 
     isAuth : function() {
+
         return (localStorage.getItem('secretToken') !== null);
+
+
     },
 
     logout : function() {

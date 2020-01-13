@@ -7,6 +7,7 @@ export class Signup extends React.Component {
         super(props);
         this.state = {
             email: "",
+            username : "",
             password: "",
             confirmationPassword: ""
         }
@@ -24,6 +25,7 @@ export class Signup extends React.Component {
         }
         let _send = {
             email: this.state.email,
+            username : this.state.username,
             password: this.state.password,
             confirmationPassword: this.state.confirmationPassword
         }
@@ -47,6 +49,10 @@ export class Signup extends React.Component {
                 <FormGroup controlId="email" bsSize="large">
                     <FormLabel>Email</FormLabel>
                     <FormControl autoFocus type="email" value={this.state.email} onChange={this.handleChange}/>
+                </FormGroup>
+                <FormGroup controlId="username" bsSize="large">
+                    <FormLabel>Username</FormLabel>
+                    <FormControl value={this.state.username} onChange={this.handleChange} type="text"/>
                 </FormGroup>
                 <FormGroup controlId="password" bsSize="large">
                     <FormLabel>Password</FormLabel>

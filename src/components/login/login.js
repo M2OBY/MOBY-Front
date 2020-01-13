@@ -37,7 +37,9 @@ export class Login extends React.Component {
         API.login(this.state.email, this.state.password).then(function (data) {
             console.log("hahaha",data)
             localStorage.setItem('secretToken', data.data.user.secretToken);
-            localStorage.setItem('user', data.data.user.username);
+            localStorage.setItem("token",data.data.secretToken)
+
+
             sessionStorage.setItem('secretToken', data.data.user.secretToken);
             sessionStorage.setItem('user', data.data.user.username);
             localStorage.setItem('email', data.data.user.email);
