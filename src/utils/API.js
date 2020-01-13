@@ -57,6 +57,7 @@ export default {
     },
 
     isAuth : function() {
+        console.log("TEST TEST ::", localStorage.getItem('email'))
         return (localStorage.getItem('email') !== null);
     },
 

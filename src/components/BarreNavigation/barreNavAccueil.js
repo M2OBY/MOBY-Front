@@ -51,7 +51,7 @@ export default class NavBarAccueil extends React.Component {
     buttonConnect = test => {
         if (test === true){
             return (       
-                  {/* <nav className="navbar navbar-default">
+                 <nav className="navbar navbar-default">
                 <div className= "container-fluid" >
                     <div className= "navbar-header" > <a className = "navbar-brand" href = "#" >  </a> </div>
                     <ul className = "nav navbar-nav" >
@@ -75,11 +75,11 @@ export default class NavBarAccueil extends React.Component {
 
                     </ul>
                 </div>
-            </nav> */}
-                <div>
+            </nav> 
+               /*  <div>
                     <Navbar color="light" light expand="md">
                     <NavbarBrand href="#" onClick={this.dashboard}>Home</NavbarBrand>
-                      {/* <NavbarToggler onClick={toggle} />  */}
+                    <NavbarToggler onClick={toggle} /> 
                     <Collapse navbar>
                         <NavbarBrand href="#" onClick={this.profil}>Profil user</NavbarBrand>
                         <NavbarBrand href="#" onClick={this.upload}>Upload</NavbarBrand>
@@ -88,7 +88,7 @@ export default class NavBarAccueil extends React.Component {
                         <NavbarBrand href="#" onClick ={this.disconnect}>Se déconnecter</NavbarBrand>
                     </Collapse>
                     </Navbar>
-                </div>         
+                </div>  */        
             )}
 
             else {
