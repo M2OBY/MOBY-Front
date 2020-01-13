@@ -16,6 +16,7 @@ export default {
         },{
             headers: headers
         })
+        //window.localStorage.setItem("secretToken", query.token);
     },     verif : function(token) {
         return axios.post(burl + '/users/verify',{
             'secretToken' : token

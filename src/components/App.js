@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../assets/css/kidsIndex.css';
-
+import queryString from "query-string";
 import NavAccueil from './BarreNavigation/barreNavAccueil';
 import Footer from './login/footer'
 
@@ -19,7 +19,14 @@ import {File} from './AffichageFile/viewFile.js';
 export default class App extends Component {
 
 
-
+//Test pour auth
+/* componentWillMount() {
+    let query = queryString.parse(this.props.location.search);
+    if (query.token) {
+      window.localStorage.setItem("jwt", query.token);
+      this.props.history.push("/");
+   }
+} */
 
     render() {
 

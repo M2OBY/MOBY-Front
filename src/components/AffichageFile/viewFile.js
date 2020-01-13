@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Card, Button, CardImg, CardTitle, CardText, CardDeck,
+  Card, Button, CardImg, CardTitle, CardText, CardDeck,CardColumns,
   CardSubtitle, CardBody
 } from 'reactstrap';
 export class File extends React.Component {
@@ -9,9 +9,9 @@ export class File extends React.Component {
 }
   render(){
     return (
-      <CardDeck>
+      <CardColumns>
         <Card>
-          <CardImg top width="100%" src= '../../assets/images/PDF_file_icon.svg' alt="Card image cap" />
+          <CardImg top width="10%" src= {require('../../assets/images/Logo-PDF.png')} alt="Card image cap" />
           <CardBody>
             <CardTitle>Card title</CardTitle>
             <CardSubtitle>Card subtitle</CardSubtitle>
@@ -20,7 +20,7 @@ export class File extends React.Component {
           </CardBody>
         </Card>
         <Card>
-          <CardImg top width="100%" src="/assets/256x186.svg" alt="Card image cap" />
+          <CardImg top width="10%" src={require('../../assets/images/Logo-PDF.png')} alt="Card image cap" />
           <CardBody>
             <CardTitle>Card title</CardTitle>
             <CardSubtitle>Card subtitle</CardSubtitle>
@@ -29,7 +29,7 @@ export class File extends React.Component {
           </CardBody>
         </Card>
         <Card>
-          <CardImg top width="100%" src="./assets/images/backg2.png" alt="Card image cap" />
+          <CardImg top width="10%" src={require('../../assets/images/Logo-PDF.png')} alt="Card image cap" />
           <CardBody>
             <CardTitle>Card title</CardTitle>
             <CardSubtitle>Card subtitle</CardSubtitle>
@@ -37,7 +37,43 @@ export class File extends React.Component {
             <Button>Button</Button>
           </CardBody>
         </Card>
-      </CardDeck>
+        <Card>
+          <CardImg top width="10%" src= {require('../../assets/images/Logo-PDF.png')} alt="Card image cap" />
+          <CardBody>
+            <CardTitle>Card title</CardTitle>
+            <CardSubtitle>Card subtitle</CardSubtitle>
+            <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</CardText>
+            <Button>Button</Button>
+          </CardBody>
+        </Card>
+        <Card>
+          <CardImg top width="10%" src= {require('../../assets/images/Logo-PDF.png')} alt="Card image cap" />
+          <CardBody>
+            <CardTitle>Card title</CardTitle>
+            <CardSubtitle>Card subtitle</CardSubtitle>
+            <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</CardText>
+            <Button>Button</Button>
+          </CardBody>
+        </Card>
+        <Card>
+          <CardImg top width="10%" src= {require('../../assets/images/Logo-PDF.png')} alt="Card image cap" />
+          <CardBody>
+            <CardTitle>Card title</CardTitle>
+            <CardSubtitle>Card subtitle</CardSubtitle>
+            <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</CardText>
+            <Button>Button</Button>
+          </CardBody>
+        </Card>
+        <Card>
+          <CardImg top width="10%" src= {require('../../assets/images/Logo-PDF.png')} alt="Card image cap" />
+          <CardBody>
+            <CardTitle>Card title</CardTitle>
+            <CardSubtitle>Card subtitle</CardSubtitle>
+            <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</CardText>
+            <Button>Button</Button>
+          </CardBody>
+        </Card>
+        </CardColumns>
     );
   }
   };

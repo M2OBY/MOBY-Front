@@ -12,6 +12,7 @@
     "preact-charts": "^1.0.1",
     "pubsub": "^3.2.1",
     "pubsub-js": "^1.7.0",
+    "query-string": "^6.9.0",
     "react": "^16.12.0",
     "react-360": "^1.1.0",
     "react-awesome-modal": "^2.0.5",
