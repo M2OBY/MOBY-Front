@@ -1,70 +1,43 @@
-import React, { Component } from 'react';
+import React from "react";
+import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 
-
-import styled from 'styled-components';
-import '../../assets/css/index.css'
-
-
-export default class Footer extends React.Component{
-    render(){
-        return(
-
-
-
-   /*    <NavWrapper className="navbar navbar-expand-sm  navbar-dark px-sm-5 mb-0" >
-
-
-<ul class="nav justify-content-center ml-5">
-  <li class="nav-item ml-5">
-    <h4>Acheter </h4>
-    <p>Ce site vous permet d'acheter..</p>
-  </li>
-  <li class="nav-item ml-5">
-  <h4>Vendre</h4>
-  <p>Vendre vos produits</p>
-  </li>
-  <li class="nav-item ml-5">
-  <h4>A propos de nous</h4>
-  <p>Bejaia est un site E-Commerce </p>
-  </li>
-  <li class="nav-item ml-5">
-  <h4>Contactez nous</h4>
-  </li>
-</ul> *
-
-
-
-
-      </NavWrapper>
-*/
- <div className="footer">
- <h1>Merci d'avoir visité mon site web fictif.</h1>
-</div>
-
-
-
-
-);
-}
+const Footer = () => {
+    return (
+        <MDBFooter color="blue" className="font-small pt-4 mt-4">
+            <MDBContainer fluid className="text-center text-md-left">
+                <MDBRow>
+                    <MDBCol md="6">
+                        <h5 className="title">A propos</h5>
+                        <p>
+                            Un site client pour commander un fichier avec la voix
+                        </p>
+                    </MDBCol>
+                    <MDBCol md="6">
+                        <h5 className="title">Liens</h5>
+                        <ul>
+                            <li className="list-unstyled">
+                                <a href="#!">Home</a>
+                            </li>
+                            <li className="list-unstyled">
+                                <a href="#!">contactez nous</a>
+                            </li>
+                            <li className="list-unstyled">
+                                <a href="#!">se connecter</a>
+                            </li>
+                            <li className="list-unstyled">
+                                <a href="#!">s'enregister</a>
+                            </li>
+                        </ul>
+                    </MDBCol>
+                </MDBRow>
+            </MDBContainer>
+            <div className="footer-copyright text-center py-3">
+                <MDBContainer fluid>
+                    &copy; {new Date().getFullYear()} Copyright: <a href="#"> MOBY </a>
+                </MDBContainer>
+            </div>
+        </MDBFooter>
+    );
 }
 
-
-
-/* const NavWrapper = styled.nav`
-background:#464745;
-.nav-link{
-    color:var(--mainWhitee) !important;
-    font-size:3rem
-    text-transform:capitalize !important;
-}
-
-.nav-link:hover{
-  color:var(--mainYellow) !important;
-  font-size:1.33rem
-  text-transform:capitalize !important;
-}
-
-` */
-
-
-
+export default Footer;

@@ -12,7 +12,7 @@ export class Profil extends React.Component {
     constructor(props) {
         super(props);
         let user = API.affichageProfil(localStorage.getItem('email'))
-        console.log("profiltestapi",user)
+        console.log("profiltestapi",localStorage.getItem('secretToken'))
 
         this.state = {
             email: localStorage.getItem('email'),
