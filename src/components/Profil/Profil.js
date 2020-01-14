@@ -33,6 +33,7 @@ export class Profil extends React.Component {
     };
 
     send = event => {
+        console.log("sendProfil:",this.state)
         if (this.state.email.length === 0) {
             localStorage.setItem('text', "email invalid"); this.setState({
                 ...this.state
@@ -47,15 +48,17 @@ export class Profil extends React.Component {
             //window.location = "/"
             return;
         }
-        API.profil(this.state.email, this.state.password, this.state.age, this.state.nom, this.state.sex, this.state.prenom).then(function (data) {
-            localStorage.setItem('token', data.data.token);
-            localStorage.setItem('user', data.data.user);
-             localStorage.setItem('age', data.data.age);
-            localStorage.setItem('nom', data.data.nom);
-            localStorage.setItem('sex', data.data.sex);
+        API.profil(this.state.username,this.state.dateNaissance, this.state.name, this.state.genre, this.state.prenom, this.state.ville, this.state.mobile).then(function (data) {
 
+            console.log("APIPROFILPAGEPROFIL:",data)
+            localStorage.setItem('name', data.data.name);
+            localStorage.setItem('prenom', data.data.prenom);
+            localStorage.setItem('genre', data.data.genre);
+            localStorage.setItem('dateNaissance', data.data.dateNaissance);
+            localStorage.setItem('ville', data.data.ville);
+            localStorage.setItem('mobile', data.data.mobile);
 
-            window.location = "/dashboard"
+            window.location = "/profil"
         }, function (error ) {
 
             });
@@ -92,9 +95,9 @@ export class Profil extends React.Component {
                 />
                  </FormGroup>
 
-                 <FormGroup controlId="nom" bsSize="large">
+                 <FormGroup controlId="name" bsSize="large">
                     <FormLabel>Nom</FormLabel>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <FormControl id = "nom" type="nom" value={this.state.name} onChange={this.handleChange}/>
+                    <FormControl id = "name" type="name" value={this.state.name} onChange={this.handleChange}/>
                  </FormGroup>
 
                  <FormGroup controlId="prenom" bsSize="large">
@@ -103,14 +106,14 @@ export class Profil extends React.Component {
                  </FormGroup>
 
                  <FormGroup controlId="dateNaissance" bsSize="large">
-                    <FormLabel>Age</FormLabel>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <FormLabel>Date Naissance</FormLabel>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <FormControl autoFocus type="dateNaissance" value={this.state.dateNaissance} onChange={this.handleChange}/>
                  </FormGroup>
 
 
                 <FormGroup controlId="email" bsSize="large" >
                     <FormLabel>Email</FormLabel>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <FormControl autoFocus type="email" value={this.state.email} onChange={this.handleChange}/>
+                    <FormControl autoFocus type="email" disabled value={this.state.email} onChange={this.handleChange}/>
                 </FormGroup>
 
                 <FormGroup controlId="ville" bsSize="large">

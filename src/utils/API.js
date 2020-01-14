@@ -39,14 +39,16 @@ export default {
             headers: headers,
         },)
     },
-    profil : function(email, password,age, nom, sex, prenom){
-        return axios.post(burl + '/users/Profil/',{
-            'email' : email,
-            'password' : password,
-            'sex' : sex,
-            'age' : age,
-            'nom' : nom,
-            'prenom' : prenom
+    profil : function(username,dateNaissance, name, genre, prenom, ville, mobile){
+        return axios.post(burl + '/users/profil/',{
+            'email' : localStorage.getItem("email"),
+            'password' : localStorage.getItem('password'),
+            'genre' : genre,
+            'dateNaissance' : dateNaissance,
+            'name' : name,
+            'prenom' : prenom,
+            'ville' : ville,
+            'mobile': mobile,
         },{
              headers: headers
         })
