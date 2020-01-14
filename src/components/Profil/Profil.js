@@ -11,22 +11,20 @@ import 'react-widgets/dist/css/react-widgets.css';
 export class Profil extends React.Component {
     constructor(props) {
         super(props);
-        let user = API.affichageProfil(localStorage.getItem('email'))
-        console.log("profiltestapi",localStorage.getItem('secretToken'))
+
+
 
         this.state = {
-            email: localStorage.getItem('email'),
-            password: "",
-            sex:"Homme",
-            nom:"",
-            age:"",
-            prenom:"",
+            name: localStorage.getItem('name'),
+            genre : localStorage.getItem('genre'),
+            prenom :localStorage.getItem('prenom'),
+            email : localStorage.getItem('email'),
+            password : localStorage.getItem('password'),
+            username :localStorage.getItem('username'),
+            dateNaissance : localStorage.getItem('dateNaissance'),
+            ville : localStorage.getItem('ville'),
+            mobile: localStorage.getItem('mobile'),
 
-            user:localStorage.getItem('user'),
-            sex:localStorage.getItem('sex'),
-            nom:localStorage.getItem('nom'),
-            age:localStorage.getItem('age'),
-            prenom:localStorage.getItem('prenom'),
         }
         this.handleChange.bind(this);
         //this.send.bind(this);
@@ -82,22 +80,21 @@ export class Profil extends React.Component {
         return (
             <div className="ProfilBack">
 
-            <div className="Profil">
+            <div  className="Profil">
             <FormLabel className="titleProfil"> Profil</FormLabel>
 
                  <FormGroup controlId = "Sex" bsSize="large">
                  <FormLabel>sex</FormLabel>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                 <FormLabel>Sex</FormLabel>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <DropdownList
+                 <DropdownList
                 data={["Homme","Femme", "Indéterminé"]}
-                value = {this.state.sex}
-                onChange = {(value) => this.setState({sex:value})}
+                value = {this.state.genre ? this.state.genre:"Indéterminé"}
+                onChange = {(value) => this.setState({genre:value})}
                 />
                  </FormGroup>
 
                  <FormGroup controlId="nom" bsSize="large">
                     <FormLabel>Nom</FormLabel>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <FormControl id = "nom" type="nom" value={this.state.nom} onChange={this.handleChange}/>
+                    <FormControl id = "nom" type="nom" value={this.state.name} onChange={this.handleChange}/>
                  </FormGroup>
 
                  <FormGroup controlId="prenom" bsSize="large">
@@ -105,9 +102,9 @@ export class Profil extends React.Component {
                     <FormControl id="prenom" type="prenom" value={this.state.prenom} onChange={this.handleChange}/>
                  </FormGroup>
 
-                 <FormGroup controlId="age" bsSize="large">
+                 <FormGroup controlId="dateNaissance" bsSize="large">
                     <FormLabel>Age</FormLabel>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <FormControl autoFocus type="age" value={this.state.age} onChange={this.handleChange}/>
+                    <FormControl autoFocus type="dateNaissance" value={this.state.dateNaissance} onChange={this.handleChange}/>
                  </FormGroup>
 
 
@@ -116,9 +113,13 @@ export class Profil extends React.Component {
                     <FormControl autoFocus type="email" value={this.state.email} onChange={this.handleChange}/>
                 </FormGroup>
 
-                <FormGroup controlId="username" bsSize="large">
-                    <FormLabel>username</FormLabel>&nbsp;
-                    <FormControl value={this.state.user} onChange={this.handleChange} type="username"/>
+                <FormGroup controlId="ville" bsSize="large">
+                    <FormLabel>ville</FormLabel>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <FormControl value={this.state.ville} onChange={this.handleChange} type="ville"/>
+                </FormGroup>
+                <FormGroup controlId="mobile" bsSize="large">
+                    <FormLabel>mobile</FormLabel>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <FormControl value={this.state.mobile} onChange={this.handleChange} type="mobile"/>
                 </FormGroup>
 
                 <div className="erreur">{localStorage.getItem('text' )}</div>
