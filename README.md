@@ -1,4 +1,4 @@
-
+ 
 
 ## `Présentation du Projet Pilotage vocale d'une application`
  Cette application a été conçu dans le cadre de la réalisation d’un projet en Développement de Logiciel Libre sous la licence CC BY-NC-SA.
