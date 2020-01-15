@@ -1,5 +1,6 @@
 import React from "react";
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
     return (
@@ -22,10 +23,10 @@ const Footer = () => {
                                 <a href="#!">contactez nous</a>
                             </li>
                             <li className="list-unstyled">
-                                <a href="#!">se connecter</a>
+                                <a href="/">se connecter</a>
                             </li>
                             <li className="list-unstyled">
-                                <a href="#!">s'enregister</a>
+                                <a href="/signup" >s'inscrire</a>
                             </li>
                         </ul>
                     </MDBCol>
